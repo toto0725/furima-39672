@@ -21,16 +21,17 @@
 
 ## itemsテーブル
 
-| Column       | Type       | Options                        |
-| -------------| -----------| -------------------------------|
-| name         | text       | null: false                    |
-| price        | integer    | null: false                    |
-| category_id  | integer    | null: false                    |
-| condition_id | integer    | null: false                    |
-| fee_id       | integer    | null: false                    |
-| source_id    | integer    | null: false                     |
-| delivery_id  | integer    | null: false                     |
-| user         | references | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| --------------| -----------| -------------------------------|
+| name          | string     | null: false                    |
+| info          | text       | null: false                    |
+| price         | integer    | null: false                    |
+| category_id   | integer    | null: false                    |
+| condition_id  | integer    | null: false                    |
+| fee_id        | integer    | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| delivery_id   | integer    | null: false                    |
+| user          | references | null: false, foreign_key: true |
 
 # 単数形_idというカラム名で命名いただく
 # dayモデル day→rubyのメソッドとして登録されている
@@ -65,6 +66,7 @@
 | city          | string       | null: false                    |
 | house_number  | string       | null: false                    |
 | building_name | string       |                                |
+| phone_number  | integer      | null: false                    |
 | order         | references   | null: false, foreign_key: true |
 
 

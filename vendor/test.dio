@@ -11,34 +11,34 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="mR_twQt2U2KJQ_dH8-hi-43" value="nickname&lt;br&gt;email&lt;br&gt;encrypted_password&lt;br&gt;last_name&lt;br&gt;first_name&lt;br&gt;last_name_kana&lt;br&gt;first_name_kana&lt;br&gt;birth_date" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="110" y="80" width="240" height="230" as="geometry"/>
+                    <mxGeometry x="130" y="80" width="240" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="mR_twQt2U2KJQ_dH8-hi-66" style="edgeStyle=none;html=1;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;strokeColor=#00FFFF;" edge="1" parent="1" source="mR_twQt2U2KJQ_dH8-hi-44" target="mR_twQt2U2KJQ_dH8-hi-50">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="mR_twQt2U2KJQ_dH8-hi-44" value="name&lt;br&gt;info&lt;br&gt;price&lt;br&gt;category_id&lt;br&gt;condition_id&lt;br&gt;fee_id&lt;br&gt;source_id&lt;br&gt;derivery_id&lt;br&gt;user" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="520" y="80" width="240" height="250" as="geometry"/>
+                <mxCell id="mR_twQt2U2KJQ_dH8-hi-44" value="name&lt;br&gt;info&lt;br&gt;price&lt;br&gt;category_id&lt;br&gt;condition_id&lt;br&gt;fee_id&lt;br&gt;prefecture_id&lt;br&gt;derivery_id&lt;br&gt;user" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="80" width="240" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="mR_twQt2U2KJQ_dH8-hi-51" value="" style="edgeStyle=none;html=1;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;strokeColor=#00FFFF;" edge="1" parent="1" source="mR_twQt2U2KJQ_dH8-hi-46" target="mR_twQt2U2KJQ_dH8-hi-50">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="mR_twQt2U2KJQ_dH8-hi-46" value="postall_code&lt;br&gt;prefecture&lt;br&gt;city&lt;br&gt;house_name&lt;br&gt;order" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="520" y="350" width="240" height="250" as="geometry"/>
+                <mxCell id="mR_twQt2U2KJQ_dH8-hi-46" value="postall_code&lt;br&gt;prefecture&lt;br&gt;city&lt;br&gt;house_number&lt;br&gt;building_name&lt;br&gt;phone_number&lt;br&gt;order" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="294" y="380" width="240" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="mR_twQt2U2KJQ_dH8-hi-50" value="item&lt;br&gt;user" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="110" y="355" width="240" height="250" as="geometry"/>
+                    <mxGeometry x="310" y="280" width="190" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="mR_twQt2U2KJQ_dH8-hi-56" value="users" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry x="120" y="80" width="50" height="30" as="geometry"/>
+                    <mxGeometry x="130" y="75" width="50" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="mR_twQt2U2KJQ_dH8-hi-59" value="items" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry x="530" y="80" width="50" height="30" as="geometry"/>
+                    <mxGeometry x="460" y="80" width="50" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="mR_twQt2U2KJQ_dH8-hi-61" value="orders" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry x="120" y="355" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="300" y="270" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="mR_twQt2U2KJQ_dH8-hi-65" value="addresses" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry x="530" y="350" width="80" height="30" as="geometry"/>
+                    <mxGeometry x="280" y="370" width="80" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
