@@ -1,13 +1,15 @@
 ## usersテーブル
 
-| Column      | Type     | Options     |
-| ------------| ---------| ------------|
-| nickname    | string   | null: false |
-| email       | string   | null: false |
-| password    | string   | null: false |
-| last_name   | string   | null: false |
-| first_name  | string   | null: false |
-| birth_date  | string   | null: false |
+| Column               | Type     | Options      |
+| ---------------------| ---------| -------------|
+| nickname             | string   | null: false  |
+| email                | string   | unique: true |
+| encrypted_password   | string   | null: false  |
+| last_name            | string   | null: false  |
+| first_name           | string   | null: false  |
+| last_name (フリガナ) | string   | null: false  |
+| first_name(フリガナ) | string   | null: false  |
+| birth_date           | date     | null: false  |
 
 
 
@@ -19,32 +21,32 @@
 
 ## itemsテーブル
 
-| Column      | Type       | Options       |
-| ------------| -----------| --------------|
-| item_image  | string     | null: false   |
-| item_name   | string     | null: false   |
-| item_info   | string     | null: false   |
-|item_price   | string     | null| false   |
-|user_id      | references | null false    |
+| Column   | Type       | Options       |
+| ---------| -----------| --------------|
+| image    | string     | null: false   |
+| name     | text       | null: false   |
+| price    | integer    | null: false   |
+| genre_id | integer    | null: false   |
+| user     | references | null: false   |
 
 
 
 ### Association
-- belongs_to :users
-- has_one :orders
+- belongs_to :user
+- has_one :order
 
 
 ## ordersテーブル
 
-| Column    | Type       | Options                        |
-| ----------| -----------| ------------------------------ |
-| item_name | references | null: false, foreign_key: true |
-| user_id   | references | null: false, foreign_key: true |
+| Column   | Type       | Options                        |
+| ---------|------------| ------------------------------ |
+| name     | references | null: false, foreign_key: true |
+| user     | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :users
-- belongs_to :items
-- has_one :addresses
+- belongs_to :user
+- belongs_to :item
+- has_one :address
 
 
 ## addressesテーブル
@@ -55,10 +57,10 @@
 | prefecture    | string       | null: false                    |
 | city          | string       | null: false                    |
 | house_number  | string       | null: false                    |
-| building_name | string        | null: false                    | 
-| user_id       | references   | null: false, foreign_key: true |
+| building_name | string       |                    |           |
+| user          | references   | null: false, foreign_key: true |
 
 
 ### Association
-- belongs_to :orders
+- belongs_to :order
 
