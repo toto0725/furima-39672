@@ -1,15 +1,15 @@
 ## usersテーブル
 
-| Column               | Type     | Options      |
-| ---------------------| ---------| -------------|
-| nickname             | string   | null: false  |
-| email                | string   | unique: true |
-| encrypted_password   | string   | null: false  |
-| last_name            | string   | null: false  |
-| first_name           | string   | null: false  |
-| last_name (フリガナ) | string   | null: false  |
-| first_name(フリガナ) | string   | null: false  |
-| birth_date           | date     | null: false  |
+| Column               | Type     | Options                   |
+| ---------------------| ---------| --------------------------|
+| nickname             | string   | null: false               |
+| email                | string   | null: false, unique: true |
+| encrypted_password   | string   | null: false               |
+| last_name            | string   | null: false               |
+| first_name           | string   | null: false               |
+| last_name_kana       | string   | null: false               |
+| first_name_kana      | string   | null: false               |
+| birth_date           | date     | null: false               |
 
 
 
@@ -21,13 +21,20 @@
 
 ## itemsテーブル
 
-| Column   | Type       | Options       |
-| ---------| -----------| --------------|
-| image    | string     | null: false   |
-| name     | text       | null: false   |
-| price    | integer    | null: false   |
-| genre_id | integer    | null: false   |
-| user     | references | null: false   |
+| Column       | Type       | Options                        |
+| -------------| -----------| -------------------------------|
+| name         | text       | null: false                    |
+| price        | integer    | null: false                    |
+| category_id  | integer    | null: false                    |
+| condition_id | integer    | null: false                    |
+| fee_id       | integer    | null: false                    |
+| source_id    | integer    | null: false                     |
+| delivery_id  | integer    | null: false                     |
+| user         | references | null: false, foreign_key: true |
+
+# 単数形_idというカラム名で命名いただく
+# dayモデル day→rubyのメソッドとして登録されている
+
 
 
 
@@ -40,7 +47,7 @@
 
 | Column   | Type       | Options                        |
 | ---------|------------| ------------------------------ |
-| name     | references | null: false, foreign_key: true |
+| item     | references | null: false, foreign_key: true |
 | user     | references | null: false, foreign_key: true |
 
 ### Association
@@ -54,11 +61,11 @@
 | Column        | Type         | Options                        |
 | --------------| -------------| ------------------------------ |
 | postal_code   | string       | null: false                    |
-| prefecture    | string       | null: false                    |
+| prefecture_id | integer      | null: false                    |
 | city          | string       | null: false                    |
 | house_number  | string       | null: false                    |
-| building_name | string       |                    |           |
-| user          | references   | null: false, foreign_key: true |
+| building_name | string       |                                |
+| order         | references   | null: false, foreign_key: true |
 
 
 ### Association
