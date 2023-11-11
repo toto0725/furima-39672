@@ -56,17 +56,31 @@ RSpec.describe User, type: :model do
 
       
 
-      it '名前は名字と名前が空では登録できない' do
+      it '名前は空では登録できない' do
         @user.first_name = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("First name can't be blank")
       end
 
-      it '名前は名字と名前が空では登録できない' do
+      it '名前は半角英字のみでは登録できない' do
+        @user.first_name = '1a'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First name は全角 (漢字, ひらがな, カタカナ)で入力して下さい")
+      end
+      
+      it '名前は空では登録できない' do
         @user.last_name = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name can't be blank")
       end
+
+      it '名前は半角英数字のみでは登録できない' do
+        @user.last_name = '2b'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Last name は全角 (漢字, ひらがな, カタカナ)で入力して下さい")
+      end
+
+
 
       it '生年月日の入力が空では登録できない' do
         @user.birth_date = ''
