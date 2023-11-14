@@ -9,7 +9,7 @@ class Prefecture < ActiveHash::Base
     { id: 7, name: '山形県' },
     { id: 8, name: '福島県' },
     { id: 9, name: '茨城県' },
-    { id: 10, name: '栃木県' }
+    { id: 10, name: '栃木県' },
     { id: 11, name: '群馬県' },
     { id: 12, name: '埼玉県' },
     { id: 13, name: '千葉県' },
@@ -48,7 +48,7 @@ class Prefecture < ActiveHash::Base
     { id: 46, name: '宮崎県' },
     { id: 47, name: '鹿児島県' },
     { id: 48, name: '沖縄県' }
-    
-  ]include ActiveHash::Associations
-  has_many :items
+    ]
+    include ActiveHash::Associations
+    has_many :items
   end
