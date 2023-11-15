@@ -8,9 +8,13 @@ def new
 end
 
 def create
-  Item.create(item_params)
-  redirect_to '/'
+  if @item.create(item_params)
+    redirect_to root_path
+  else
+    render :new, status: :unprocessable_entity
+  end
 end
+
 
 
 
