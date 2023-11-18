@@ -32,31 +32,31 @@ RSpec.describe Item, type: :model do
       end
 
       it 'categoryが空では登録できない' do
-        @item.category_id = ''
+        @item.category_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
 
       it 'conditionが空では登録できない' do
-        @item.condition_id = ''
+        @item.condition_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
 
       it 'feeが空では登録できない' do
-        @item.fee_id = ''
+        @item.fee_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Fee can't be blank")
       end
 
       it 'prefectureが空では登録できない' do
-        @item.prefecture_id = ''
+        @item.prefecture_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture can't be blank")
       end
 
       it 'deliveryが空では登録できない' do
-        @item.delivery_id = ''
+        @item.delivery_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery can't be blank")
       end
@@ -67,10 +67,24 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
 
+      it 'priceが全角入力では登録できない' do
+        @item.price = '全角'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not a number")
+      end
+
+
+
       it 'imageが空では登録できない' do
         @item.image = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Image can't be blank")
+      end
+
+      it 'userが紐付いていないと保存できない' do
+        @item.user = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include('User must exist')
       end
     
     end
