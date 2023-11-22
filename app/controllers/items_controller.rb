@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :contributor_confirmation, only: [:edit, :update,]
-  
+  before_action :contributor_confirmation, only: [:edit, :update]
+
   def index
     @items = Item.includes(:user).order('created_at DESC')
   end
@@ -26,7 +26,6 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-
   end
 
   def update
@@ -37,8 +36,6 @@ class ItemsController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-
-
 
   private
 
@@ -51,5 +48,4 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     redirect_to root_path unless current_user == @item.user
   end
-
 end
