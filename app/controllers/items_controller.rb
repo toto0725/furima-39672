@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
-  before_action :set_item, only: [:edit, :show, :update,:destroy]
+  before_action :set_item, only: [:edit, :show, :update, :destroy]
 
   def index
     @items = Item.includes(:user).order('created_at DESC')
@@ -28,18 +28,14 @@ class ItemsController < ApplicationController
   end
 
   def update
-  
     if @item.update(item_params)
       redirect_to item_path(@item)
     else
       render :edit, status: :unprocessable_entity
     end
-
-    
   end
 
   def destroy
-   
     @item.destroy
     redirect_to root_path
   end
@@ -51,12 +47,9 @@ class ItemsController < ApplicationController
                                  :delivery_id).merge(user_id: current_user.id)
   end
 
-  
-
   def set_item
-   @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
-
 
   def contributor_confirmation
     @item = Item.find(params[:id])
