@@ -8,6 +8,7 @@ class Item < ApplicationRecord
   belongs_to :delivery
   belongs_to :fee
   belongs_to :prefecture
+  has_one :order
 
   validates :name, presence: true
   validates :info, presence: true
