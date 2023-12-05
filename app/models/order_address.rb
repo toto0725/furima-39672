@@ -5,9 +5,16 @@ class OrderAddress
   with_options presence: true do
   
     validates :user_id
+    validates :city
+    validates :house_number
+    validates :price
+    validates :token
+    validates :phone_number
     validates :postal_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
   end
   validates :prefecture_id, numericality: {other_than: 0, message: "can't be blank"}
+  validates :price, numericality: { only_integer: true, message: "is invalid" }
+ 
   
   def save
   
