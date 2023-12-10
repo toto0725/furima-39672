@@ -129,6 +129,7 @@
     <% if current_user == @item.user %>
      <% redirect_to root_path %>
      <% end %>
+     
       <%= f.submit "購入" ,class:"buy-red-btn", id:"button" %>
     </div>
     <% end %>

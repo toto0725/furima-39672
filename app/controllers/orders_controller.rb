@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
     gon.public_key = ENV['PAYJP_PUBLIC_KEY']
     @item = Item.find(params[:item_id])
     @order_address = OrderAddress.new
+    redirect_to root_path if current_user == @item.user
   end
 
   def create
@@ -31,11 +32,11 @@ class OrdersController < ApplicationController
   private
 
   def sold_check
-    @item = Item.find(params[:item_id])
-    return unless @item.order.present?
-
-    redirect_to root_path
-  end
+     @item = Item.find(params[:item_id])
+      return unless @item.order.present? && @item.user_id != current_user.id
+    
+      redirect_to root_path
+    end
 
   def order_params
     params.require(:order_address).permit(:postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number).merge(
