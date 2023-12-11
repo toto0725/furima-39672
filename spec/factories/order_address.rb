@@ -4,11 +4,9 @@ FactoryBot.define do
     prefecture_id { 1 }
     city { 'Tokyo' }
     house_number { '1-2-3' }
-    building_name { '' }
-    phone_number { '090-1234-5678' }
+    building_name { 'やなぎビル' }
+    phone_number { '09012345678' }
     price { 1000 }
-    user_id { 1 }
-    item_id { 1 }
     token { 'abc123' }
   end
 end
