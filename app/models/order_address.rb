@@ -9,9 +9,7 @@ class OrderAddress
     validates :house_number
     validates :token
     validates :item_id
-    validates :phone_number, format: { with: /\A[0-9]{10,11}\z/, message: 'is invalid' }
-    validates :phone_number, length: { minimum: 10, message: 'is too short (minimum is 10 characters)' }
-    validates :phone_number, length: { maximum: 11, message: 'is too long (maximum is 11 characters)' }
+    validates :phone_number, presence: true, length: { minimum: 10, maximum: 11, message: 'is invalid (should be 10 or 11 characters)' }, format: { with: /\A[0-9]{10,11}\z/, message: 'is invalid' }
     validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'is invalid. Include hyphen(-)' }
   end
 

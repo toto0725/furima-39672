@@ -18,7 +18,7 @@ class Item < ApplicationRecord
   validates :prefecture, presence: true
   validates :delivery, presence: true
   validates :price, presence: true
-  validates :image, presence: true
+  
 
   validates :image, presence: true, unless: :was_attached?
 
